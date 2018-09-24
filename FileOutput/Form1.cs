@@ -18,13 +18,9 @@ namespace FileOutput
         string str ="\"";//2重引用符
         private void button1_Click(object sender, EventArgs e)
         {
-
             //ファイル出力
-            //string output = JsonConvert.SerializeObject(json);
-            //string json = JsonConvert.SerializeObject(date2, Formatting.Indented);
             string filename = "test.json";
             StreamWriter writer = new StreamWriter(filename,false,Encoding.GetEncoding("UTF-8"));
-            //writer.WriteLine(format_json(output));
             //config出力
             writer.WriteLine("{");
             writer.WriteLine(" "+str+"niconico"+str+":{");
@@ -38,13 +34,6 @@ namespace FileOutput
             //カンペ画像出力
             writer.WriteLine("}");
             writer.Close();
-        }
-
-        //jsonの整形
-        private static string format_json(string json)
-        {
-            dynamic parsedJson = JsonConvert.DeserializeObject(json);
-            return JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
         }
     }
 }
